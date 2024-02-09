@@ -58,7 +58,7 @@ def scrape():
     t.start()
     
     # Start the timer before performing the web scraping
-    return render_template('scrape.html')
+    return redirect(url_for('scrape'))
     
 @app.route('/download')
 def submit():
