@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python-like Code in JavaScript</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.12.6/skulpt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/0.12.6/skulpt-stdlib.js"></script>
+</head>
+<body>
+
+<script type="text/python">
+# Your Python code here
+def greet(name):
+    print("Hello, " + name)
+
+greet("World")
+</script>
+
+<script>
+Skulpt.configure({output:alert});
+Skulpt.misceval.run(document.querySelector("script[type='text/python']").textContent);
+</script>
+
+</body>
+</html>

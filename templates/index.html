@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Movie Mahal</title>
+		<link rel="icon" type="image/png" href="static/favicon.jpeg" sizes="32x32">
+		<style>
+			            .hidden {
+			    display: none;
+			  }
+              .button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+  background-color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.button:active {
+  transform: translateY(1px);
+}
+
+						    /* Header styles */
+						    header {
+						        background-color: #2d545e;
+						        color: #fff;
+						        display:inline-flex;
+						        height:100%;
+						        width:100%;
+						        align-content:initial;
+						        border:2px solid #e1b382;
+						        margin-top:0px;
+						        margin-left:0px;
+						        margin-right:0px;
+								border-radius:5px;
+						    }
+						    header img {
+						        margin-top:-10px;
+						        margin-left:-10px;
+						        margin-bottom:-10px;
+						        width: 180px; /* Adjust size as needed */
+						        height: 130px;
+						         /* Maintain aspect ratio */
+						    }
+
+						    /* Div styles */
+						    .content {
+						        /* From https://css.glass */
+
+						width:180px;
+						height:300px;
+						margin-top:10px;
+						margin-left:10px;
+						margin-right:10px;
+						    }
+						    input{
+						        background: rgba(255, 255, 255, 0.2);
+						border-radius: 10px;
+						box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+						backdrop-filter: blur(5px);
+						-webkit-backdrop-filter: blur(5px);
+						border: 1px solid rgba(255, 255, 255, 0.3);
+						    }
+						    .main{
+						        display:flex;
+						        flex-wrap:wrap;
+			                    margin-left:25px;
+						    }
+						    body{
+						        background-color:#12343b;
+
+						    }
+						    .hid{
+						        display:none;
+						    }
+						    #name{
+						        margin-top:20px;
+						        color:white;
+						    }
+						    #name:hover{
+						        color:#e1b382;
+						    }
+						    #year{
+						        font-size:15px;
+						        color:#e1b382;
+						        background: rgba(255, 255, 255, 0.2);
+						border-radius: 2px;
+						box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+						backdrop-filter: blur(5px);
+						-webkit-backdrop-filter: blur(5px);
+						border: 1px solid rgba(255, 255, 255, 0.3);
+						    }
+			                .search-container {
+			  display: flex;
+			  max-width: 100px;
+			  margin-top:40px;
+			  height:40px;
+			  padding-left:20px;/* Adjust the maximum width as needed */
+			}
+
+			input[type="text"] {
+			  flex: 1;
+			  padding: 10px;
+			  border: 1px solid #ccc;
+			  border-radius: 5px 0 0 5px;
+			  outline: none;
+			}
+
+			button[type="submit"] {
+			  padding: 10px 15px;
+			  border: none;
+			  background-color:#ef912c; /* Adjust the background color as needed */
+			  color: #fff;
+			  border-radius: 0 5px 5px 0;
+			  cursor: pointer;
+			  outline: none;
+			}
+
+			button[type="submit"]:hover {
+			  background-color: #e1b382; /* Adjust the hover color as needed */
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="static/main.png" height="10px" width=auto alt="Logo" />
+			<b style="padding-left:235px;font-size: 30px;margin-top:30px;"
+				>&nbsp;&nbsp;Where Quality & Clarity Matters<br /><b
+					style="font-size:16px;"
+					>Watch &nbsp;Telugu &nbsp;Movies &nbsp;in &nbsp;HD
+					&nbsp;Exclusively &nbsp;on &nbsp;MOVIEMAHAL.NET</b
+				></b
+			>
+			<div class="search-container">
+				<input type="text" id="searchInput" placeholder="Search..." />
+				<button onclick="performSearch()" type="submit">Search</button>
+                <a href="/" class="button">Home</a>
+			</div>
+		</header>
+
+		<!-- Div elements -->
+		<div class="main" style="margin-top:50px">
+			<div class="content" >
+				<form action="/scrape" method="POST">
+					<input
+						type="image"
+						src="https://assets.gadgets360cdn.com/pricee/assets/product/202312/Saindhav_1703231520.jpg"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="saindhav" />
+				</form>
+				<b id="name">Saindhav</b><br />
+				<b id="year">&nbsp;2024&nbsp;</b>
+			</div>
+
+			<div class="content">
+				<form action="/scrape" method="POST">
+					<input
+						type="image"
+						src="https://gallery.123telugu.com/content/slideshows/2023/10/Hi-Nanna15/images/F8dQ1dEW0AA9FYI.jpg"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="hinanna" />
+				</form>
+				<b id="name">Hi Nanna</b><br />
+				<b id="year">&nbsp;2023&nbsp;</b>
+			</div>
+
+			<div class="content">
+				<form  action="/scrape" method="post">
+					<input
+						type="image"
+						src="https://movies4u.cafe/wp-content/uploads/2023/12/Salaar.jpg"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="salaar" />
+				</form>
+				<b id="name">Salaar</b><br />
+				<b id="year">&nbsp;2023&nbsp;</b>
+			</div>
+			<div class="content">
+				<form action="/scrape" method="POST">
+					<input
+						type="image"
+						src="https://m.media-amazon.com/images/M/MV5BZjA4YjVjYjctNDJkNC00OTMyLWI1NzgtMmFjZDY4ZTQxNzFmXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_FMjpg_UX1000_.jpg"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="neru" />
+				</form>
+				<b id="name">Neru</b><br />
+				<b id="year">&nbsp;2024&nbsp;</b>
+			</div>
+			<div class="content">
+				<form action="/scrape" method="POST">
+					<input
+						type="image"
+						src="https://www.cinejosh.com/newsimg/newsmainimg/bhagavanth-kesari-arrival-date-announced_b_2207230350.jpg"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="bhagavanthkesari" />
+				</form>
+				<b id="name">Bhagavanth Kesari</b><br />
+				<b id="year">&nbsp;2023&nbsp;</b>
+			</div>
+			<div class="content">
+				<form action="/scrape" method="POST">
+					<input
+						type="image"
+						src="https://www.cinejosh.com/reviewsimg/big/mad-review_b_0610230610.jpg"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="mad" />
+				</form>
+				<b id="name">Mad</b><br />
+				<b id="year">&nbsp;2023&nbsp;</b>
+			</div>
+			<div class="content">
+				<form action="/scrape" method="POST">
+					<input
+						type="image"
+						src="https://www.masala.com/wp-content/uploads/cloud/2023/09/22/image-17.png"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="animal" />
+				</form>
+				<b id="name">Animal</b><br />
+				<b id="year">&nbsp;2023&nbsp;</b>
+			</div>
+			<div class="content">
+				<form action="/scrape" method="POST">
+					<input
+						type="image"
+						src="https://www.kerala9.com/wp-content/uploads/2021/12/pushpa-movie-hd-poster-001.jpg"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="pushpa" />
+				</form>
+				<b id="name">Pushpa</b><br />
+				<b id="year">&nbsp;2022&nbsp;</b>
+			</div>
+			<div class="content">
+				<form action="/scrape" method="POST">
+					<input
+						type="image"
+						src="https://m.media-amazon.com/images/M/MV5BN2RjOTQ2M2UtMjA0NC00MjNhLTgwZjUtOWJmOWY0OTM1ZGUzXkEyXkFqcGdeQXVyMTA3MDk2NDg2._V1_.jpg"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="virupaksha" />
+				</form>
+				<b id="name">Virupaksha</b><br />
+				<b id="year">&nbsp;2023&nbsp;</b>
+			</div>
+			<div class="content">
+				<form action="/scrape" method="POST">
+					<input
+						type="image"
+						src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/83f2e9138694485.622216768fb32.jpg"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="paramporul" />
+				</form>
+				<b id="name">Paramporul</b><br />
+				<b id="year">&nbsp;2024&nbsp;</b>
+			</div>
+			<div class="content">
+				<form action="/scrape" method="POST">
+					<input
+						type="image"
+						src="https://industryhit.com/t/wp-content/uploads/2023/12/IMG-20231215-WA0018_copy_768x960.jpg"
+						width="180px"
+						height="250px"
+						style="border-radius:10px"
+						alt="movie"
+					/>
+					<input class="hid" name="movie" value="pindam" />
+				</form>
+				<b id="name">Pindam</b><br />
+				<b id="year">&nbsp;2024&nbsp;</b>
+			</div>
+		</div>
+		
+		<script>
+			function performSearch() {
+				var searchQuery = document
+					.getElementById('searchInput')
+					.value.toLowerCase()
+				var results = document.getElementsByClassName('content')
+
+				for (var i = 0; i < results.length; i++) {
+					var resultText = results[i].textContent.toLowerCase()
+					if (resultText.includes(searchQuery)) {
+						results[i].style.display = 'block'
+					} else {
+						results[i].style.display = 'none'
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
