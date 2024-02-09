@@ -49,6 +49,7 @@ def index():
     return render_template('index.html', message=message)
 @app.route('/scrape',methods=['GET','POST'])
 def scrape():
+    text=''
     if request.method == 'POST':
         name = request.form['movie']
         for i in range(len(movies)):
